@@ -15,6 +15,10 @@ int main(){
     cout << "Enter a course number: ";
     cin >> courseNumber;
 
+    if (courseRoom.find(courseNumber) == courseRoom.end()) {
+        cout << "Course not found." << endl;
+        return 1;
+    }
     cout << "Course: " << courseNumber << endl;
     cout << "Room: " << courseRoom[courseNumber] << endl;
     cout << "Instructor: " << courseInstructor[courseNumber] << endl;
