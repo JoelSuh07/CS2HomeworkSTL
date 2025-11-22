@@ -19,6 +19,7 @@ int main(){
         while (file >> stateName){
 
             getline(cin, stateName, ',');
+            getline(cin, capitalCity);
             stateToCapital[stateName] = capitalCity;
         }
         file.close();
