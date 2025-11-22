@@ -15,10 +15,15 @@ int main(){
     file.open("LineFile.txt");
     //stores unique words
     set<string> words;
-    if (file.is_open())
+    if (!file.is_open())
+    {
+        cout << "Error opening file";
+        return 1;
+    }
+    else
     {
         //Read the first line
-        while (getline(file,line))
+        while (file >> line)
         {
             //cout << line << '\n';
             words.insert(line);
