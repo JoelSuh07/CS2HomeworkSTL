@@ -20,7 +20,7 @@ int main(){
         //Read the first line
         while (getline(file,line))
         {
-            cout << line << '\n';
+            //cout << line << '\n';
             words.insert(line);
         }
         file.close();
