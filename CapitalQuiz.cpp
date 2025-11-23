@@ -18,15 +18,15 @@ int main(){
     else{
         while (file >> stateName){
 
-            getline(cin, stateName, ',');
-            getline(cin, capitalCity);
+            getline(file, stateName, ',');
+            getline(file, capitalCity);
             stateToCapital[stateName] = capitalCity;
         }
         file.close();
     }
 
     cout << "Enter a State: ";
-    cin >> stateName;
+    getline(cin,stateName);
     if (stateToCapital.find(stateName) == stateToCapital.end()) {
         cout << "State not found." << endl;
         return 1;
