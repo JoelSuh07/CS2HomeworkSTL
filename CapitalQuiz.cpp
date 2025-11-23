@@ -16,12 +16,20 @@ int main(){
         return 1;
     }
     else{
-        while (file >> stateName){
+         string line;
+        // Read the file line by line
+        while (getline(file, line)) {
+            // Find the position of the comma
+            size_t commaPos = line.find(','); 
+            if (commaPos != string::npos) {
+                // Extract the state name (before the comma)
+                stateName = line.substr(0, commaPos); 
+                // Extract the capital city (after the comma)
+                capitalCity = line.substr(commaPos + 1);
 
-            getline(file, stateName, ',');
-            getline(file, capitalCity);
-            stateToCapital[stateName] = capitalCity;
+                stateToCapital[stateName] = capitalCity;
         }
+    }
         file.close();
     }
 
